@@ -9,7 +9,7 @@ function WithHeaderStyledExample() {
   return (
     <div className="sticky-top">
       <Card className="text-center w-100" bg="dark" text="light">
-        <Card.Header as="h5">Bringing the Best Our of You</Card.Header>
+        <Card.Header as="h5">Bringing the Best Out of You</Card.Header>
         <Card.Body>
           <Card.Title>
             Sign Up for Leasons on Gun Safetey and Proper Gun Use
