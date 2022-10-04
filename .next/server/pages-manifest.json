@@ -2,5 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/thoughts": "pages/thoughts.js",
+  "/contact": "pages/contact.js",
+  "/scheduler": "pages/scheduler.js",
+  "/reviews": "pages/reviews.js",
   "/": "pages/index.js"
 }

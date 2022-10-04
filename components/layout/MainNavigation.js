@@ -1,52 +1,60 @@
+import Link from "next/link";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import classes from "./MainNavigation.module.css";
-import Link from "next/link";
+import Offcanvas from "react-bootstrap/Offcanvas";
+
 function MainNavigation() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" >
-      <Container >
-        <Navbar.Brand href="#home">SheepDog Project</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+    <Navbar bg="dark" variant="dark" expand="md" className="mb-3">
+      <Container fluid>
+        <Navbar.Brand>SheepDog Project</Navbar.Brand>
+        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
+        <Navbar.Offcanvas
+          id="offcanvasNavbar-expand-sm"
+          aria-labelledby="offcanvasNavbarLabel-expand-sm"
+          placement="end"
+          className="text-bg-dark"
+        >
+          <Offcanvas.Header closeButton className="btn-close-white">
+            <Offcanvas.Title
+              id="offcanvasNavbarLabel-expand-sm"
+              className="text-dark"
+            >
+              Menu
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Link href="/" passHref>
+                <Nav.Link>Home</Nav.Link>
+              </Link>
+              <Link href="/scheduler" passHref>
+                <Nav.Link id="schedulerLink">Schedule</Nav.Link>
+              </Link>
+              <NavDropdown
+                title="More"
+                id="offcanvasNavbarDropdown-expand-sm"
+                drop="start"
+              >
+                <Link href="/reviews" passHref>
+                  <NavDropdown.Item>Reviews</NavDropdown.Item>
+                </Link>
+                <Link href="/thoughts" passHref>
+                  <NavDropdown.Item>Thoughts</NavDropdown.Item>
+                </Link>
+                <NavDropdown.Divider />
+                <Link href="/contact" passHref>
+                  <NavDropdown.Item>Contact</NavDropdown.Item>
+                </Link>
+              </NavDropdown>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );
-
-  // return (
-  //   <header className={classes.header}>
-  //     <div className={classes.logo}>SheepDog Project</div>
-  //     <nav>
-  //       <ul>
-  //         <li>
-  //           <Link href='/reviews'>Reviews</Link>
-  //         </li>
-  //         <li>
-  //           <Link href='/boomsticks'>Boomsticks and other murder devices</Link>
-  //         </li>
-  //       </ul>
-  //     </nav>
-  //   </header>
-  // );
 }
 
 export default MainNavigation;
