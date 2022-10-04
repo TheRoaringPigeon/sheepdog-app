@@ -9,7 +9,7 @@ function MainNavigation() {
   return (
     <Navbar bg="dark" variant="dark" expand="md" className="mb-3">
       <Container fluid>
-        <Navbar.Brand>SheepDog Project</Navbar.Brand>
+        <Navbar.Brand>Sheepdog Project LLC</Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
         <Navbar.Offcanvas
           id="offcanvasNavbar-expand-sm"

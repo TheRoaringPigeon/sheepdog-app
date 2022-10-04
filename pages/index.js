@@ -51,7 +51,7 @@ function HomePage(props) {
   return (
     <Fragment>
       <Head>
-        <title>SheepDog Project</title>
+        <title>Sheepdog Project LLC</title>
         <meta
           name="description"
           content="Meet Daniel Woodward, learn about proper gun use and practice gun safety!"
